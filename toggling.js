@@ -57,7 +57,6 @@ function turnFilteringOn(callback){
 
 function denyPage(tabId){
 	chrome.storage.sync.get('blockingMethod', function (data) {
-		console.log(data.blockingMethod)
 		switch (data.blockingMethod) {
 			case "close_tab":
 				chrome.tabs.remove(tabId);
@@ -66,7 +65,6 @@ function denyPage(tabId){
 				chrome.tabs.discard(tabId);
 				break;
 			case "nobody_cares":
-				console.log("nobody cares")
 				chrome.tabs.update(tabId, {url: 'https://static.displate.com/857x1200/displate/2020-04-27/f75f15e36b7f67b03f0653458f10d995_b6d5050d9438f87bf7dd6601d5b64e26.jpg'})
 				break;
 		}
