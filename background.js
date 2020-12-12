@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(function initialization(){
 	turnFilteringOff();
 
-	chrome.storage.sync.set({'blockingMethod': "close_tab"});
+	chrome.storage.sync.set({'blockingMethod': "nobody_cares"});
 	let timerData = { isTimerEnabled: false, blockUntilMilliseconds: 0};
 	chrome.storage.sync.set({'timerData': timerData});
 	

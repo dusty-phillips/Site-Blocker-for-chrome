@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
 				console.log('Clearing tab set.');
 			});
 		}
+		else if(closingMethodRadios[2].checked){
+			chrome.storage.sync.set({'blockingMethod': "nobody_cares"}, function() {
+				console.log('Motivational message set.');
+			});
+		}
     });
 });
 
@@ -24,6 +29,9 @@ function selectCurrentValues(){
 				break;
 			case "clear_tab":
 				document.getElementById("clear_tab").checked = true;
+				break;
+			case "nobody_cares":
+				document.getElementById("nobody_cares").checked = true;
 				break;
 		}
 	});
